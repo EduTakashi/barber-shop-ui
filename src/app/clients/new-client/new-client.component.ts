@@ -38,6 +38,7 @@ export class NewClientComponent implements OnDestroy {
 
   onSubmitClient(value: ClientModelForm) {
     const { id, ...request } = value
+    console.log("Dados enviados no save:", request);
     this.httpSubscription = this.httpService.save(request).subscribe(_ => {
       this.snackBarManager.show('Usuário foi cadastrado')
       this.router.navigate(['clients/list'])

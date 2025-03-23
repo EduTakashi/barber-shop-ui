@@ -50,7 +50,7 @@ export class EditClientComponent implements OnInit, OnDestroy{
     const { id, ...request} = value
     if (id){
       this.httpsubscription?.push(this.httpService.update(id, request).subscribe(_ => {
-        this.snackBarManager.show('Usuário foi atualizado'),
+        this.snackBarManager.show('Usuário foi atualizado')
         this.router.navigate(['clients/list'])
 
       }))
